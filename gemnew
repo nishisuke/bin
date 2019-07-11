@@ -1,0 +1,15 @@
+GEMNAME=$1
+bundle gem $GEMNAME --mit --coc --no-ext --no-exe -t=minitest
+cd $GEMNAME
+git commit -m 'bundle gem $GEMNAME --mit --coc --no-ext --no-exe -t=minitest'
+touch CHANGELOG.md
+git add CHANGELOG.md
+git commit -m 'touch CHANGELOG.md'
+sed -i '' -e "s/TODO: Put your gem's CHANGELOG.md URL here./https:\/\/github.com\/nishisuke\/$GEMNAME\/blob\/master\/CHANGELOG.md/" $GEMNAME.gemspec
+sed -i '' -e "s/TODO: Put your gem's public repo URL here./https:\/\/github.com\/nishisuke\/$GEMNAME/" $GEMNAME.gemspec
+sed -i '' -e "s/TODO: Put your gem's website or public repo URL here./https:\/\/github.com\/nishisuke\/$GEMNAME/" $GEMNAME.gemspec
+
+sed -i '' -e '/allowed_push_host/d' $GEMNAME.gemspec
+
+sed -i '' -e "s/TODO: Write a short summary, because RubyGems requires one./$GEMNAME/" $GEMNAME.gemspec
+sed -i '' -e "s/TODO: Write a longer description or delete this line./$GEMNAME/" $GEMNAME.gemspec
