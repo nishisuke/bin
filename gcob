@@ -1,0 +1,5 @@
+if [ $# -eq 0 ]; then
+  git checkout -b `date '+%d%H%M'`
+else
+  git checkout -b `date '+%d%H%M'`-$1
+fi
