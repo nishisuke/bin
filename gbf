@@ -1,0 +1,5 @@
+if [ $# -eq 0 ]; then
+  exit 1
+else
+  git checkout -b fix-#$1
+fi
