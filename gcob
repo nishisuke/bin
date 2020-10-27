@@ -1,5 +1,5 @@
 if [ $# -eq 0 ]; then
-  git checkout -b rns/`date '+%d%H'`
+  git checkout -b rns/`date '+%d'`
 else
-  git checkout -b rns/`date '+%d%H'`-$1
+  git checkout -b rns/`date '+%d'`-$1
 fi
