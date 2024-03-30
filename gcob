@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+if [ $# -eq 0 ]; then
+	git checkout -b feature/`date '+%d%M'`
+else
+	git checkout -b feature/"$1"
+fi
